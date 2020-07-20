@@ -1,0 +1,458 @@
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../../../favicon.ico">
+
+  <title>Yemen Map</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+
+    <!---Leaflet CSS--->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+    
+    <!---Leaflet JS--->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin=""></script>
+
+    <!----ESRI JS---->
+    <script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js"
+    integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="
+    crossorigin=""></script>
+
+    <!--Leaflet MarkerCluster CSS-->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css"
+    integrity="sha512-BBToHPBStgMiw0lD4AtkRIZmdndhB6aQbXpX7omcrXeG2PauGBl2lzq2xUZTxaLxYz5IDHlmneCZ1IJ+P3kYtQ=="
+    crossorigin="">
+    
+    <!--Leaflet MarkerCluster JS-->
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
+    integrity="sha512-MQlyPV+ol2lp4KodaU/Xmrn+txc1TP15pOBF/2Sfre7MRsA/pB4Vy58bEqe9u7a7DczMLtU5wT8n7OblJepKbg=="
+    crossorigin=""></script>
+    
+    <!-- Load Esri MarkerCluster -->
+    <script src="https://unpkg.com/esri-leaflet-cluster@2.1.0/dist/esri-leaflet-cluster.js"
+    integrity="sha512-fEdNFHisleVtEYdLhW4Z2RsR7TN6hLutE/+O4D+skfTNY2rlHm8HOZARPWkdrFFy/+i2KjFxcZAKTUWaVfbV0g=="
+    crossorigin=""></script>
+    
+    <!-- Load Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Load Leaflet Zoom Home -->
+    <link rel="stylesheet" href="css/leaflet.zoomhome.css"/>
+    <script src="lib/leaflet.zoomhome.min.js"></script>
+    
+    <!-- Load Leaflet Control Locate -->
+    <link rel="stylesheet" href="lib/leaflet-locatecontrol/L.Control.Locate.min.css" />
+    <script src="lib/leaflet-locatecontrol/L.Control.Locate.min.js" type="text/javascript"></script>
+    
+    <!-- Load Personal Stylesheet -->
+     <link rel="stylesheet" href="css/style.css">
+    
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9790948087.js" crossorigin="anonymous"></script>
+</head>
+    
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    
+    <div id="open" class="navbar-header d-flex flex-wrap">
+                <button type="button" class="openbtn" onclick="openNav()"><i class="fa fa-bars"></i></button>
+    </div>
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+    
+    <div class="dropdown">
+        <button class="dropbtn">Charity</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://baitulmaal.org/yemen-crisis/">Baitulmaal AHED</a>
+            <a class="dropdown-item" href="hhttps://irusa.org/middle-east/yemen/">Islamic Relief USA</a>
+            <a class="dropdown-item" href="https://www.zakat.org/en/where-we-work/yemen/">Zakat Foundatoin of America</a>
+            <a class="dropdown-item" href="https://www.unicefusa.org/mission/emergencies/child-refugees/crisis-in-yemen">UNICEF USA</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Volunteer Abroad</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://www.unv.org/">UN Volunteers</a>
+            <a class="dropdown-item" href="https://www.vsointernational.org/volunteering">Voluntary Service Overseas</a>
+            <a class="dropdown-item" href="https://www.giveadayglobal.org/">Give a Day Global</a>
+            <a class="dropdown-item" href="https://reliefweb.int/jobs">Relief Web</a>
+            <a class="dropdown-item" href="https://www.redr.org.uk/">Redr UK</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Volunteer From Home</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://www.onlinevolunteering.org/en">UN Online Volunteer</a>
+            <a class="dropdown-item" href="https://www.missingmaps.org/">Missing Maps Project</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Sending Goods</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://www.globalhand.org/en/home_who">Global Hand</a>
+            <a class="dropdown-item" href="https://volunteer.oxfam.org.uk/">OXFAM Shop Finder for Volunteers</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Recent News</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://www.reuters.com/places/yemen">Reuters</a>
+            <a class="dropdown-item" href="https://www.cfr.org/global-conflict-tracker/conflict/war-yemen">Global Conflict Tracker</a>
+            <a class="dropdown-item" href="https://www.unicef.org/emergencies/yemen-crisis">UNICEF Yemen</a>
+            <a class="dropdown-item" href="https://www.cbsnews.com/feature/yemen-civil-war/">CBS Yemen Civil War Updates</a>
+        </div>
+    </div>
+     <div class="dropdown">
+        <button class="dropbtn">Data/Information</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://www.yemendataproject.org/">Yemen Data Project</a>
+            <a class="dropdown-item" href="https://data.humdata.org/group/yem">Humanitarian Data Exchange</a>
+            <a class="dropdown-item" href="https://data.world/datasets/yemen">Data Sets: Yemen</a>
+            <a class="dropdown-item" href="https://data.worldbank.org/country/YE">Data World Bank</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <button class="dropbtn">Website Creator</button>
+        <div class="dropdown-content">
+            <a class="dropdown-item" href="https://lostabroad.github.io/jasonheutmaker/#portfolio">Personal Website</a>
+            <a class="dropdown-item" href="https://lostabroad.github.io/jasonheutmaker/#resume">Resume</a>
+            <a class="dropdown-item" href="https://lostabroad.github.io/jasonheutmaker/#about">About Me</a>
+        </div>
+    </div>
+        <div class="modal-container">
+            <input id="modal-toggle" type="checkbox">
+            <button><i class="fa fa-question-circle white"></i></button>
+              <div class="modal-backdrop">
+                <div class="modal-content">
+                  <label class="modal-close" for="modal-toggle">x</label>
+                  <h2><b>Website Navigation</b></h2>
+                  <hr />
+                  <p><b>The Story:</b> This map contains data pertaining to and discussing the current humanitarian crisis that is taking place in Yemen.</p><p><b>Search Selection:</b> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information</p><p><b>Layer Selection:</b>The righthand side is a selection of layers that can be turned on and off at will. *Note: In order for the "Search Selection" to be used the layer must be turned on.</p><p><b>Multiple Layers:</b> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show). *Note: When loading Conflict data make certain it is the only layer selected.</p><p><b>Story/History:</b> Information pertaining to Yemen's Humanitarian Crisis is located on the far left of the screen. Click on the downward facing arrows to read the different sections.</p><p><b>Helping Yemen:</b> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>
+                  <label class="modal-close button" for="modal-toggle">Close</label>
+                </div>
+               </div>
+         </div>
+			<form  class= "search-bar1" method="get" action="http://www.google.com/search">
+
+                <div class= "search-bar2">
+                <table class= "search-bar3">
+                <tr><td>
+                <input class="search-bar5" type="text"   name="q" size="20"
+                 maxlength="255" value="" />
+                <input class="search-bar4" type="submit" value="Search" /></td></tr>
+                <tr><td align="center" style="font-size:50%">
+                </td></tr></table>
+                </div>
+
+            </form>
+    </nav>
+<!--------------------->
+    <div id="container">
+        <div id="sidebar">
+            <div class="sidebar-wrapper" >
+                <div class="card card-default" id="features">
+                    <div class="card-header" >
+                        <h3 class="card-title"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>Yemen's Crisis: A Brief Overview
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#filterSection" aria-expanded="false" aria-control="filterSection" id="sidebar-open-filter"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    
+                    <div class="collapse" id="filterSection">
+                        <div class="card-body">
+                            <form>
+                                <figure><img src="yemen_1.jpg" alt="Yemen Starving" style="width:33.4vw;height:34vh;">
+                                <figcaption>Starving child recieving medical aid in Yemen</figcaption>
+                                </figure>
+                                <p style="width:34vw"><b>Overview</b><br>
+                                    After five years of war, Yemen remains the worst humanitarian crisis in the world. More than 3.6 million people have been forced to flee their homes and 24 million Yemenis are in dire need of humanitarian assistance. Almost two-thirds of the population - approximately 20 million people - are on the brink of famine.</p>
+                               <figure><img src="yemen_2.jpg" alt="Yemen At War" style="width:33.4vw;height:34vh;"> 
+                                   <figcaption>The start of the humanitarian crisis</figcaption>
+                                </figure>
+                                <p><b>A Brief Hitory</b><br>
+                                    Yemen's recent history is one of division and bloodshed. Until the early 1960s, the country was ruled by a monarchy in the north and the British in the south. Coups in both regions plunged the country into decades of violence, ending with reunification in 1990.</p>
+
+                                    <p>The Middle Eastern nation has long been one of the region's poorest. In 2015, it was ranked 168 out of 188 countries on the Human Development Index, which measures life expectancy, education and standard of living.</p>
+
+                                    <p>Prior to the war, Yemen's population of more than 20 million was projected to double by 2035. Amid high unemployment and dissatisfaction with the ruling Saleh family, the country was ready for change when the Arab Spring swept across North Africa and the Middle East in 2011.</p>
+                            </form>
+                            <button type="button" class="btn" data-toggle="collapse" href="#filterSection" aria-expanded="false" aria-control="filterSection" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default" id="reviewtrails">
+                    <div class="card-header">
+                        <h3 class="card-title">The Start
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#reviewSection" aria-expanded="false" aria-control="reviewSection" id="sidebar-open-review"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    <div class="collapse" id="reviewSection">
+                        <div class="card-body">
+                            <form id="review_trails_form">
+                             <figure>
+                                 <img src="yemen_3.jpg" alt="Former President Saleh" style="width:33.4vw;height:34vh;">
+                                <figcaption>Former President Saleh relinquished power in late 2011 after multiple attempts to force his resignation</figcaption>
+                                </figure>
+                                <p><b>The Several Year Journey</b><br>Yemen's war unfolded over several years, beginning with the Arab Spring in 2011. Pro-democracy protesters took to the streets in a bid to force President Ali Abed Allah Saleh to end his 33-year rule. He responded with economic concessions, but refused to resign.</p>
+
+                                <p>By March, tensions on the streets of the capital city, Sanaa, saw protesters dying at the hands of the military. One of Yemen's most prominent commanders backed the opposition, paving the way for deadly clashes between government troops and tribal militias.</p>
+                                    
+                                <p>Thanks to an internationally-brokered deal, Yemen finally saw a transfer of power in November to Vice President Abed Rabbo Mansour Hadi, paving the way for elections in February - in which he was the only candidate. Hadi's attempts at constitutional and budget reforms sparked outcry by Houthi rebels from the north.</p>
+                                
+                                <figure><img src="yemen_4.jpg" alt="Hadi Found Guilty" style="width:33.4vw;height:34vh;"> <figcaption>A rebel court in Sanaa sentenced President Hadi (pictured right) to death for high treason in absentia this year. He was found guilty of "instigating attacks by Saudi Arabia" in addition to "usurping the title of president" in 2014</figcaption></figure>
+                                <p>By September 2014, Houthi insurgents had taken the capital city, forcing Hadi to relocate his government to the southern port city of Aden.</p>
+                            </form>
+                            <button type="button" class="btn " data-toggle="collapse" href="#reviewSection" aria-expanded="false" aria-control="reviewSection" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-default" id="test">
+                    <div class="card-header">
+                        <h3 class="card-title">The Fighting
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#testing" aria-expanded="false" aria-control="testing" id="sidebar-open-test"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    <div class="collapse" id="testing">
+                        <div class="card-body">
+                            <form id="review_trails_form">
+                                <figure><img src="yemen_5.jpg" alt="Destruction of Homes" style="width:33.4vw;height:34vh;"> <figcaption>Homes, hospitals and schools have been destroyed in the fighting. Human rights watchdog Amnesty International says evidence points to war crimes on both sides of the conflict</figcaption></figure>
+                                
+                                <p><b>Whose Backing Whom</b><br>Multiple factions are entangled in Yemen's war. However, the conflict divides into two main categories: pro-government forces led by President Hadi and anti-government forces led by the Houthis, who are backed by former President Saleh.</p>
+
+                                <p>The Houthis hail from Yemen's north and belong to a small branch of Shiite Muslims known as Zaydis. Until summer 2015, the insurgents had infiltrated much of the country's south. They currently maintain control over key central provinces in the north. Hadi's government has accused Iran of smuggling them military arms, an accusation which Tehran has denied.</p>
+                                
+                                <figure><img src="yemen_6.jpg" alt="Hadi Loyalists" style="width:33.4vw;height:34vh;"> <figcaption>Yemeni members of the southern separatist movement, loyal to President Abdrabu Mansur Hadi, hold their positions in Aden's suburbs, </figcaption></figure>
+                                
+                                <p>President Hadi's government is headquartered in Aden and is the internationally-recognized government of Yemen. In 2015, Saudi Arabia launched an international coalition in a bid to reinstate Hadi.</p>
+
+                                <p>In recent months, fissures have appeared in Hadi's exiled government, with his former security adviser, Aidarous al-Zubaidi and former cabinet member Hani Bin Braik, spearheading a secessionist movement with Emirati backing.</p>
+                            </form>
+                            <button type="button" class="btn " data-toggle="collapse" href="#testing" aria-expanded="false" aria-control="testing" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-default" id="coalition">
+                    <div class="card-header">
+                        <h3 class="card-title">Saudi-Arabia Led Coalition
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#saudiLed" aria-expanded="false" aria-control="saudiLed" id="sidebar-open-test"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    <div class="collapse" id="saudiLed">
+                        <div class="card-body">
+                            <form id="review_trails_form">
+                                <figure><img src="yemen_7.jpg" alt="Saudi-Led Coalition" style="width:33.4vw;height:45vh;"> <figcaption>Map showing nations with confirmed participation in the Saudi-led military offensive against Yemeni rebels</figcaption></figure>
+                                
+                                <p><b>The Coalition At A Glance</b><br>Along with Saudi Arabia, the United Arab Emirates has conducted airstrikes on Yemeni soil. Kuwait, Bahrain, Qatar, Morocco, Sudan, Jordan and Egypt have also contributed to the operations.</p>
+
+                                <p>The United States and the United Kingdom have both provided logistical support and intelligence to the Saudi-led coalition.</p>
+                            </form>
+                            <button type="button" class="btn " data-toggle="collapse" href="#saudiLed" aria-expanded="false" aria-control="saudiLed" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-default" id="concerns">
+                    <div class="card-header">
+                        <h3 class="card-title">Main Concerns
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#yemenConcerns" aria-expanded="false" aria-control="yemenConcerns" id="sidebar-open-test"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    <div class="collapse" id="yemenConcerns">
+                        <div class="card-body">
+                            <form id="review_trails_form">
+                                <figure><img src="yemen_8.jpg" alt="Food Insecurity" style="width:33.4vw;height:34vh;"> <figcaption></figcaption></figure>
+                                
+                                <p><b>The Forgotten War</b><br>In Yemen's "forgotten war," the civilian population has lost the most. According to the United Nations, the death toll surpassed 10,000 at the beginning of 2017, with at least 40,000 wounded.</p>
+
+                                <p>Officials have also sounded the alarm amid medical supplies shortages. Doctors without Borders suspended its aid after two years, threatening the daily operations of Yemen's national blood bank.<br><br> The EU has labeled it as the "worst humanitarian crisis in the world."</p>
+                            </form>
+                             <button type="button" class="btn " data-toggle="collapse" href="#yemenConcerns" aria-expanded="false" aria-control="yemenConcerns" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card card-default" id="cholera">
+                    <div class="card-header">
+                        <h3 class="card-title">Cholera & COVID-19 At A Glance
+                            <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#choleraConcern" aria-expanded="false" aria-control="choleraConcern" id="sidebar-open-test"><i onclick="myFunction(this)" class="fa fa-chevron-down"></i></button>
+                        <script>
+                        function myFunction(x) {
+                          x.classList.toggle("fa-chevron-up");
+                        }
+                        </script>
+                        </h3>
+                    </div>
+                    <div class="collapse" id="choleraConcern">
+                        <div class="card-body">
+                            <form id="review_trails_form">
+                                <figure><img src="yemen_9.jpg" alt="Cholera Outbreak" style="width:33.4vw;height:34vh;"> <figcaption></figcaption></figure>
+                                
+                                <p><b>The Largest Outbreak In History</b><br>Yemen is also currently facing the largest cholera outbreak in history, according to the Outbreak Observatory. Since the Yemeni cholera epidemic began in October 2016, more than 2.1 million Yemenis have been infected with cholera, and thousands have died, according to the WHO, as of December 2019.</p>
+
+                                <p>Cholera is a serious diarrheal illness, transmitted not from person-to-person, but rather via cholera bacterium, which originates in the feces of an infected person. Their feces can contaminate food and drinking water. When others consume the contaminated food or water, they become infected, as explained by the CDC.</p>
+                                
+                                <figure><img src="yemen_10.jpg" alt="COVID Outbreak" style="width:33.4vw;height:34vh;"> <figcaption>Medical personnel check people's temperature on the street as a precautionary measure against the spread of coronavirus COVID-19, April 5, 2020 on the outskirts of Sana'a, Yemen.</figcaption></figure>
+                                
+                                <p><b>Coronavirus in Yemen</b><br>On top of the cholera epidemic in Yemen, COVID-19 is infecting the country, as well. According to Worldometers, there have only been a total of 902 coronavirus cases and 244 deaths in Yemen (on record, at least). However, the coronavirus pandemic is hurting Yemenis in ways beyond the virus itself. </p>
+
+                                <p>For example, before the coronavirus outbreak, 2 million children in Yemen did not attend school. Now that schools have been closed across Yemen, an additional 5 million Yemeni children are not attending school, according to UNICEF. Additionally, many people have lost their jobs due to the pandemic, meaning some people have lost their income and are now struggling to feed their families.</p>
+                                
+                                <figure><img src="yemen_11.jpg" alt="Regular Remittances" style="width:33.4vw;height:34vh;"> <figcaption>A Yemen community helping each other out in a time of crisis</figcaption></figure>
+                                <p>Many Yemenis rely on regular remittances from family members or friends abroad but with economies struggling around the world, those rates have fallen drastically, which is undoubtedly contributing to more Yemenis going hungry.</p>
+                                <p>As reported by The New Humanitarian via Oxfam data, in the war torn governorate of Sa’ada, Yeman, around 30,000 people rely on money sent from family or friends abroad but since COVID-19 began, remittance transactions managed by one Sa’ada exchange have gone from the usual rate of more than 2,500 per month to 100 per month by the end of April. That’s a decrease of more than 95 percent.</p>
+                            </form>
+                             <button type="button" class="btn " data-toggle="collapse" href="#choleraConcern" aria-expanded="false" aria-control="cholderConcern" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    
+                    function openNav() {
+                      document.getElementById("sidebar").style.width = "36vw";
+                      document.getElementById("open").style.marginLeft = "0x";
+                    }
+
+                    function closeNav() {
+                      document.getElementById("sidebar").style.width = "0";
+                      document.getElementById("open").style.marginLeft= "0";
+                    }
+                </script>
+                
+                <p><br><br></p>
+                <figure><img src="yemen_12.jpg" alt="In Need" style="width:35.4vw;height:37vh;">
+                </figure>
+            </div>
+        </div>
+    </div>
+<!--- Create Map -->
+<div id="map"></div>
+
+<!-- Create Query for Food Insecurity -->
+<div class="leaflet-bar1">
+    <div id="query3" class="leaflet-barq3">
+      <label>
+        Food Insecurity:
+        <select id="insecurity">
+          <!-- make sure to encase string values in single quotes for valid sql -->
+            <option value="1=1">All</option>
+            <option value="ML2='2'">Stressed</option>
+            <option value="ML2='3'">Emergency</option>
+            <option value="ML2='4'">Crisis</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Create Query for Livelihood -->
+    <div id="query1" class="leaflet-barq1">
+      <label>
+        Livelihood:
+        <select id="zone">
+            <option value="1=1">All</option>
+            <option value="LZCODE='YE01'">Sorghum, Barley, Qat, & Livestock </option>
+            <option value="LZCODE='YE02'">Tropical Fruit, Fodder & Livestock </option>
+            <option value="LZCODE='YE03'">Agro-Pastoral</option>
+            <option value="LZCODE='YE04'">Palm, Wheat, Vegetable & Livestock</option>
+            <option value="LZCODE='YE05'">Potato, Vegetable & Livestock </option>
+            <option value="LZCODE='YE06'">Sorghum, Millet & Livestock</option>
+            <option value="LZCODE='YE07'">Coastal & Island Fishing</option>
+            <option value="LZCODE='YE08'">Desert Pastoral</option>
+            <option value="LZCODE='YE09'">Wheat, Fruit, Vegetable, Qat, & Livestock</option>
+            <option value="LZCODE='YE10'">Qat, Grain, Fodder & Livestock</option>
+            <option value="LZCODE='YE11'">Sorghum, Millet, Vegetable, Fruit & Livestock</option>
+            <option value="LZCODE='YE12'">Coffee, Qat, Sorghum & Livestock</option>
+            <option value="LZCODE='YE13'">Wheat, Sorghum, Qat, & Livestock</option>
+            <option value="LZCODE='YE14'">Sorghum, Millet, & Livestock</option>
+            <option value="LZCODE='YE15'">Urban</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Create Query for Factions -->
+    <div id="query4" class="leaflet-barq4">
+      <label>
+        Faction:
+        <select id="territories">
+          <!-- make sure to encase string values in single quotes for valid sql -->
+            <option value="1=1">All</option>
+            <option value="Faction='Houthi Movement'">Houthi Movement</option>
+            <option value="Faction='Al-Qaeda'">Al-Qaeda </option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Create Query for Factions -->
+    <div id="query5" class="leaflet-barq5">
+      <label>
+        Population:
+        <select id="population">
+          <!-- make sure to encase string values in single quotes for valid sql -->
+            <option value="1=1">All</option>
+            <option value="Link__Pop1<='27000'">Less than 27k</option>
+            <option value="Link__Pop1>'27001' AND Link__Pop1<= '44000'">Between 27k & 44k</option>
+            <option value="Link__Pop1>'44000' AND Link__Pop1<= '65000'">Between 44k & 65k </option>
+            <option value="Link__Pop1>'65000' AND Link__Pop1<= '96000'">Between 65k & 96k </option>
+            <option value="Link__Pop1>'96000' AND Link__Pop1<= '149000'">Between 96k & 149k </option>
+            <option value="Link__Pop1>'149000'">Greater than 149k </option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Create Query for Conflicts -->
+    <div id="query2" class="leaflet-barq2">
+      <label>
+        Conflicts:
+        <select id="areas">
+            <option value="1=1">All</option>
+            <option value="event_type='Battles'">Battles</option>
+            <option value="event_type='Explosions/Remote violence'">Explosions/Remote</option>
+            <option value="event_type='Protests'">Protests</option>
+            <option value="event_type='Riots'">Riots</option>
+            <option value="event_type='Strategic developments'">Strategic </option>
+            <option value="event_type='Violence against civilians'">Civilian Violence</option>
+        </select>
+      </label>
+    </div>
+</div>
+<!--    my js script-->
+<script type="text/javascript" src="js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
