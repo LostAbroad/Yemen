@@ -1,20 +1,12 @@
 body { margin:0; padding:0; overflow: hidden;}
 
 #map {
-    height: 92.5%;
-    top: 6.7vh;
-    top:3.8vw;
+    height:92%;
+    top: 7.8vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
 p {
     font-size: 3vw;
     font-size: 1.6vh;
-}
-
-.leaflet-popup-content {
-    min-width: 50vw;
-    min-width: 95vh;
-    min-height: 24vw;
-    min-height: 28vh;
 }
 
 .search-bar1{
@@ -223,7 +215,7 @@ nav {
     -webkit-box-shadow: none;
     box-shadow: none;
     top:6.25vh;
-    width:100vw;
+    width:100%;
 }
 
 #reviewtrails {
@@ -313,11 +305,26 @@ form{
   font-size: 2vh;
   font-size: 1.2vw;
   border: none;
-  margin: 4
+}
+
+.navbar-toggler{
+    width:6vh;
+    height:4.2vh;
+}
+
+.navbar-collapse{
+    position: right;
+    padding-top: .82vh;
+    padding-left: 10vh;
+}
+
+.navbar-toggler{
+    padding-left: 30vh;
+    position: right;
 }
 
 .dropdown {
-  position: relative;
+  position: right;
   display: inline-block;
 }
 
@@ -325,14 +332,15 @@ form{
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 20%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 .dropdown-content a {
+  font-size: 2vh;
+  font-size: 1.2vw;
   color: black;
-  padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
@@ -380,23 +388,18 @@ button:hover{
       background-color: #eeeeee;
 }
 
+
 label:hover{
     background-color: #f4f4f4;
 }
 
 /* The Modal (background) */
-.modal-container {
-  margin: 0 auto;
-  right: 3.7vw;
-  position: relative;
-}
 
 .modal-container button {
-  display: block;
-  margin: 0 auto;
+  display: relative;
   color: #fff;
-  width: 2vw;
-  height: 4vh;
+  width: 100%;
+  height: 10%;
   line-height: 0px;
   background: none;
   font-size: 2.4vh;
@@ -414,10 +417,10 @@ label:hover{
 
 .modal-container #modal-toggle {
   position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
+  right: 27.2%;
+  top: 28%;
+  height: 50%;
+  width: 2%;
   margin: 0;
   opacity: 0;
   cursor: pointer;
@@ -426,8 +429,8 @@ label:hover{
 .modal-container #modal-toggle:hover ~ button { background: #644824; }
 
 .modal-container #modal-toggle:checked {
-  width: 100vw;
-  height: 100vh;
+  width: 10vw;
+  height: 10vh;
   position: fixed;
   left: 0;
   top: 0;

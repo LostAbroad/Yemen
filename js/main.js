@@ -157,8 +157,8 @@ var countyYemen = L.esri.featureLayer({
   var map = L.map('map', {
     zoomControl: false,
     center: [15.8527, 47.5164],
-    zoom: 6,
-    minZoom: 6,
+    zoom: 5,
+    minZoom: 5,
     maxZoom: 15,
     layers: [street, foodInsecurity]
   });
@@ -210,13 +210,13 @@ var locateControl = L.control.locate({
     'County Boundaries': countyYemen
   };
 
-//Main Map Popup
-var popup = L.popup({
-    keepInView: true,
-    offset: L.point(14,213),
-    closeButton: true,
-    autoClose: true
-    }).setLatLng(map.getBounds().getCenter()).setContent('<p class= mainPopup1><b>Layer Selection:</b> The top right corner of this map contains various layers that can be added to the map in order to get a better understanding of why Ymemen is currently suffering a Humanitarian crisis. If you are interested in how each  layer collected/made decisions on classifications click on the "?" on the navigation bar above.</p><p class= mainPopup2><b>Food Insecurity:</b> It shows current outcomes and forward-looking analysis representing the most likely food security for the near term. It is important to note that if there is no food insecuity it is not included. Not having access to reliable food can lead to malnutrition, death, an increase in civilian conflicts, and more. </p><p class= mainPopup3><b>Livelihood Zone:</b> Is an area where people share broadly the same pattern of livelihood, including options for obtaining food and income and market opportunities. This is included to give context and potential reasons why Yemen is currently suffering. For example, areas with more air strikes are more likely to have lower crop yields from being felled. </p><p class= mainPopup4><b>Faction:</b> An important aspect of any crisis is how the groups in control of a region are able to handle the basic needs of the individuals they are fighting for. This layer is included to show how each faction is doing in that regard and to compare the types of conflicts taking place in each zone. </p><p class= mainPopup5><b>Population:</b> This layer is meant to help showcase the role population has to play in the level of food insecurity and the types of conflicts within Yemen. </p><p class= mainPopup6><b>Conflicts:</b> The main reason Yemen is suffering through the worst Humanitarian Crisis the world has seen is due to the politics and conflicts that are currently taking place. This layer is meant to allow for an easier way to visually see how each conflict may be impacting Yemen on its road to recovery.</p> <p class= mainPopup7><b>Boundaries:</b> County, State, and County boundaries have been included to serve as a reference point for those that wish to explore more indepth/various points of interest in regard to the other layers.</p>').openOn(map);
+////Main Map Popup
+//var popup = L.popup({
+//    keepInView: true,
+//    offset: L.point(14,213),
+//    closeButton: true,
+//    autoClose: true
+//    }).setLatLng(map.getBounds().getCenter()).setContent('<p class= mainPopup1><b>Layer Selection:</b> The top right corner of this map contains various layers that can be added to the map in order to get a better understanding of why Ymemen is currently suffering a Humanitarian crisis. If you are interested in how each  layer collected/made decisions on classifications click on the "?" on the navigation bar above.</p><p class= mainPopup2><b>Food Insecurity:</b> It shows current outcomes and forward-looking analysis representing the most likely food security for the near term. It is important to note that if there is no food insecuity it is not included. Not having access to reliable food can lead to malnutrition, death, an increase in civilian conflicts, and more. </p><p class= mainPopup3><b>Livelihood Zone:</b> Is an area where people share broadly the same pattern of livelihood, including options for obtaining food and income and market opportunities. This is included to give context and potential reasons why Yemen is currently suffering. For example, areas with more air strikes are more likely to have lower crop yields from being felled. </p><p class= mainPopup4><b>Faction:</b> An important aspect of any crisis is how the groups in control of a region are able to handle the basic needs of the individuals they are fighting for. This layer is included to show how each faction is doing in that regard and to compare the types of conflicts taking place in each zone. </p><p class= mainPopup5><b>Population:</b> This layer is meant to help showcase the role population has to play in the level of food insecurity and the types of conflicts within Yemen. </p><p class= mainPopup6><b>Conflicts:</b> The main reason Yemen is suffering through the worst Humanitarian Crisis the world has seen is due to the politics and conflicts that are currently taking place. This layer is meant to allow for an easier way to visually see how each conflict may be impacting Yemen on its road to recovery.</p> <p class= mainPopup7><b>Boundaries:</b> County, State, and County boundaries have been included to serve as a reference point for those that wish to explore more indepth/various points of interest in regard to the other layers.</p>').openOn(map);
 
 //Establish legend position within the map
 var legend1FoodInsecurity = L.control({position: 'bottomleft'});
@@ -235,9 +235,9 @@ legend1FoodInsecurity.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='150vh' width='120vw'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:14vw; max-wdith:14vw;'>") +'<br>';
     }
-
+                         
     return div;
 };
 
@@ -251,7 +251,7 @@ legend2Livelihood.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='260' width='220'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:24vh;max-width:28vh;max-height:20vw; max-wdith:20vw;'>") +'<br>';
     }
 
     return div;
@@ -267,7 +267,7 @@ legend3Conflicts.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='320' width='360'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:48vh;max-width:48vh;max-height:34vw; max-wdith:34vw;'>") +'<br>';
     }
 
     return div;
@@ -283,7 +283,7 @@ legend4Faction.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='100' width='200'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:20vh;max-width:24vh;max-height:17vw; max-wdith:17vw;'>") +'<br>';
     }
 
     return div;
@@ -299,14 +299,14 @@ legend5Population.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" height='175' width='100'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:14vw; max-wdith:14vw;'>") +'<br>';
     }
 
     return div;
 };
 
 //Add Legend 1 to map
-legend1FoodInsecurity.addTo(map);
+legend5Population.addTo(map);
 
 //Legend Add/Remove Controls
  map.on('overlayadd', function (eventLayer) {
