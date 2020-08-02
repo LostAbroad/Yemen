@@ -4,9 +4,17 @@ body { margin:0; padding:0; overflow: hidden;}
     height:92%;
     top: 7.8vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
-p {
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paragraph {
     font-size: 4vw;
     font-size: 2.6vh;
+    padding-left:4vw;
+    
 }
 
 .search-bar1{
@@ -352,6 +360,7 @@ font-size:calc(4.4px + 1vw);
 .dropdown:hover .dropbtn {background-color:#644824 ;}
 
 figcaption{
+  text-align: center;
   color: gray;
   font-style: italic;
   font-size: 1.3vh;
