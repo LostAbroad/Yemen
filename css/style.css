@@ -397,12 +397,12 @@ label:hover{
 /* The Modal (background) */
 
 .modal-container #modal-toggle {
-  position: relative;
+  position: fixed;
   width: 0px;
-  height: 1vh;
+  height: 0vh;
   cursor: pointer;
-  top: calc(13px - 1vw);
-  left: calc(10px + 78.4vw);
+  top: 5vw;
+  left: calc(3vw);
 }
 
 .modal-container .modal-backdrop {
