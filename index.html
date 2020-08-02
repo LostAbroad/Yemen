@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="../../../../favicon.ico">
@@ -62,12 +62,21 @@
     
 <body>
 
-<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top fa fa-bars" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+    <div class="modal-container">
+                <input id="modal-toggle" type="checkbox" class="fa fa-question-circle">
+                  <div class="modal-backdrop">
+                    <div class="modal-content">
+                      <label class="modal-close" for="modal-toggle">x</label>
+                      <h2><b>Website Navigation</b></h2>
+                      <hr />
+                      <p><b>The Story:</b> This map contains data pertaining to and discussing the current humanitarian crisis that is taking place in Yemen.</p><p><b>Search Selection:</b> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information</p><p><b>Layer Selection:</b>The righthand side is a selection of layers that can be turned on and off at will. *Note: In order for the "Search Selection" to be used the layer must be turned on.</p><p><b>Multiple Layers:</b> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show). *Note: When loading Conflict data make certain it is the only layer selected.</p><p><b>Story/History:</b> Information pertaining to Yemen's Humanitarian Crisis is located on the far left of the screen. Click on the downward facing arrows to read the different sections.</p><p><b>Helping Yemen:</b> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>
+                      <label class="modal-close button" for="modal-toggle">Close</label>
+                    </div>
+                   </div>
+             </div>
     
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <i class="fa fa-bars"></i>
-    </button>
     <div class="navbar-collapse collapse fixed-top">
-    
         <div id="open" class="dropdown">
                     <button type="button" class="openbtn" onclick="openNav()"><i class="fa fa-map-o"></i></button>
         </div>
@@ -130,19 +139,6 @@
                 <a class="dropdown-item" href="https://lostabroad.github.io/jasonheutmaker/#about">About Me</a>
             </div>
         </div>
-            <div class="modal-container">
-                <input id="modal-toggle" type="checkbox">
-                <button><i class="fa fa-question-circle white"></i></button>
-                  <div class="modal-backdrop">
-                    <div class="modal-content">
-                      <label class="modal-close" for="modal-toggle">x</label>
-                      <h2><b>Website Navigation</b></h2>
-                      <hr />
-                      <p><b>The Story:</b> This map contains data pertaining to and discussing the current humanitarian crisis that is taking place in Yemen.</p><p><b>Search Selection:</b> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information</p><p><b>Layer Selection:</b>The righthand side is a selection of layers that can be turned on and off at will. *Note: In order for the "Search Selection" to be used the layer must be turned on.</p><p><b>Multiple Layers:</b> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show). *Note: When loading Conflict data make certain it is the only layer selected.</p><p><b>Story/History:</b> Information pertaining to Yemen's Humanitarian Crisis is located on the far left of the screen. Click on the downward facing arrows to read the different sections.</p><p><b>Helping Yemen:</b> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>
-                      <label class="modal-close button" for="modal-toggle">Close</label>
-                    </div>
-                   </div>
-             </div>
         <div class="dropdown">
 <!--
                 <form  class= "search-bar1" method="get" action="http://www.google.com/search">
@@ -168,7 +164,7 @@
             <div class="sidebar-wrapper" >
                 <div class="card card-default" id="features">
                     <div class="card-header" >
-                        <h3 class="card-title"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>Yemen's Crisis: A Brief Overview
+                        <h3 class="card-title"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>Yemen's Crisis: An Overview
                             <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#filterSection" aria-expanded="false" aria-control="filterSection" id="sidebar-open-filter"><i onclick="myFunction(this)" class="fa fa-chevron-down" ></i></button>
                         <script>
                         function myFunction(x) {

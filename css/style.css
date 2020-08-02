@@ -76,7 +76,7 @@ p {
     padding-top: 1vh;
     padding-left: 1vh;
     padding-bottom: 1vh;
-    margin-right: 11vw;
+    margin-right: 100vw;
     display: inline;
     font-size: 2vh;
     font-size: 1vw;
@@ -305,29 +305,29 @@ form{
   color: white;
   padding: 5px;
   font-size: 2vh;
-  font-size: 1.2vw;
+  font-size: 1.6vw;
   border: none;
 }
 
 .navbar-toggler{
     width:6vh;
     height:4.2vh;
+    top:30vw;
+    padding-left: 30vh;
+    position: right;
 }
 
 .navbar-collapse{
     position: right;
-    padding-top: .82vh;
-    padding-left: 10vh;
-}
-
-.navbar-toggler{
-    padding-left: 30vh;
-    position: right;
+    padding-top: .7vh;
+    padding-left: 8vh;
 }
 
 .dropdown {
   position: right;
   display: inline-block;
+  font-size: 5vh;
+  font-size: 5vw;
 }
 
 .dropdown-content {
@@ -341,7 +341,7 @@ form{
 
 .dropdown-content a {
   font-size: 2vh;
-  font-size: 1.2vw;
+  font-size: 2vw;
   color: black;
   text-decoration: none;
   display: block;
@@ -382,8 +382,8 @@ figcaption{
   position: relative;
   top: -1.7vh;
   right: 1.8vh;
-  font-size: 4.3vh;
-  font-size: 2.3vw;
+  font-size: 3vh;
+  max-height: 23px;
 }
 
 button:hover{
@@ -397,16 +397,12 @@ label:hover{
 
 /* The Modal (background) */
 
-.modal-container button {
-  display: relative;
-  color: #fff;
-  width: 100%;
-  height: 10%;
-  line-height: 0px;
-  background: none;
-  font-size: 2.4vh;
-  font-size: 1.25vw;
-  border: 0;    
+.modal-container #modal-toggle {
+  position: relative;
+  width: 0px;
+  height: 10px;
+  cursor: pointer;
+  top: 1.2vw;
 }
 
 .modal-container .modal-backdrop {
@@ -415,17 +411,6 @@ label:hover{
   opacity: 0;
   overflow: hidden;
   transition: opacity 0.2s ease-in;
-}
-
-.modal-container #modal-toggle {
-  position: absolute;
-  right: 27.2%;
-  top: 28%;
-  height: 50%;
-  width: 2%;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
 }
 
 .modal-container #modal-toggle:hover ~ button { background: #644824; }
