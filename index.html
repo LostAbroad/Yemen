@@ -164,7 +164,7 @@
             <div class="sidebar-wrapper" >
                 <div class="card card-default" id="features">
                     <div class="card-header" >
-                        <h3 class="card-title"><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>Yemen's Crisis: An Overview
+                        <h3 class="card-title">Yemen's Crisis: An Overview
                             <button type="button" class="btn btn-xs btn-default float-right" data-toggle="collapse" href="#filterSection" aria-expanded="false" aria-control="filterSection" id="sidebar-open-filter"><i onclick="myFunction(this)" class="fa fa-chevron-down" ></i></button>
                         <script>
                         function myFunction(x) {
@@ -342,20 +342,7 @@
                              <button type="button" class="btn " data-toggle="collapse" href="#choleraConcern" aria-expanded="false" aria-control="cholderConcern" id="sidebar-open-filter"><i class="fa fa-eye-slash"></i></button>
                         </div>
                     </div>
-                </div>
-                <script>
-                    
-                    function openNav() {
-                      document.getElementById("sidebar").style.width = "36vw";
-                      document.getElementById("open").style.marginLeft = "0x";
-                    }
-
-                    function closeNav() {
-                      document.getElementById("sidebar").style.width = "0";
-                      document.getElementById("open").style.marginLeft= "0";
-                    }
-                </script>
-                
+                </div>                
                 <p><br><br></p>
                 <figure><img src="yemen_12.jpg" alt="In Need" style="max-width:32%;max-height:39%;">
                 </figure>
@@ -451,6 +438,49 @@
       </label>
     </div>
 </div>
+    
+<script>
+    
+function openNav() {
+  var x = document.getElementById("sidebar");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+  var a = document.getElementById("query1");
+  if (a.style.display === "none") {
+    a.style.display = "inline";
+  } else {
+    a.style.display = "none";
+  }
+  var b = document.getElementById("query2");
+  if (b.style.display === "none") {
+    b.style.display = "inline";
+  } else {
+    b.style.display = "none";
+  }
+  var c = document.getElementById("query3");
+  if (c.style.display === "none") {
+    c.style.display = "inline";
+  } else {
+    c.style.display = "none";
+  }
+    var d = document.getElementById("query4");
+  if (d.style.display === "none") {
+    d.style.display = "inline";
+  } else {
+    d.style.display = "none";
+  }
+    var e = document.getElementById("query5");
+  if (e.style.display === "none") {
+    e.style.display = "inline";
+  } else {
+    e.style.display = "none";
+  }
+}
+    
+</script>
 <!--    my js script-->
 <script type="text/javascript" src="js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

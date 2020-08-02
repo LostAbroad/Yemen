@@ -46,19 +46,19 @@ p {
     padding-left: 1vh;
     padding-bottom: 1vh;
     display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
     width: 14.3vw;
     height: 4.9vh;
   }
 
   #query3 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 11vh;
-    width: 6vw;
-    height: 3vh;
-    height: 1.7vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
+    width:calc(50px + 1vh);
+    width: calc(50px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
   }
 
 #query3 select:hover {
@@ -78,18 +78,19 @@ p {
     padding-bottom: 1vh;
     margin-right: 100vw;
     display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
     width: 25.8vw;
     height: 4vh
 }
 
   #query1 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 20vw;
-    height: 3vh;
-    height: 1.7vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
+    width:calc(130px + 1vh);
+    width: calc(130px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
   }
 
 #query1 select:hover {
@@ -108,8 +109,8 @@ p {
     padding-left: 1vh;
     padding-bottom: 1vh;
     display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
     width: 13vw;
     height: 4vh;
   }
@@ -119,11 +120,12 @@ p {
 }
 
   #query4 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 8.5vw;
-    height: 3vh;
-    height: 1.7vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
+    width:calc(50px + 1vh);
+    width: calc(50px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
   }
 
 
@@ -143,18 +145,19 @@ p {
     padding-left: 1vh;
     padding-bottom: 1vh;
     display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
     width: 15vw;
     height: 4vh
   }
 
   #query5 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 9vw;
-    height: 3vh;
-    height: 1.7vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
+    width:calc(50px + 1vh);
+    width: calc(50px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
   }
 
 #query2 {
@@ -169,19 +172,19 @@ p {
     padding-left: 1vh;
     padding-bottom: 1vh;
     display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
     width: 11vw;
-    height: 4vh
+    height: 4vh;
   }
 
   #query2 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 11vh;
-    width: 6vw;
-    height: 3vh;
-    height: 1.7vw;
+    font-size:calc(5px + 1vh);
+    font-size:calc(5px + 1vw);
+    width:calc(50px + 1vh);
+    width: calc(50px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
   }
 
 #query2 select:hover {
@@ -199,8 +202,8 @@ nav {
 /*//////////////////////////*/
 #sidebar {
     overflow: hidden;
-    display: block;
-    width: 36vw;
+    display: none;
+    width: 100vw;
     height: 99vh;
     z-index: 2;
     float: left;
@@ -274,7 +277,7 @@ form{
 }
 
 .card-header {
-    width: 36vw;
+    width: 100vw;
 }
 
 .card-title{
