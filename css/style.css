@@ -55,8 +55,8 @@ p {
   #query3 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
-    width:calc(50px + 1vh);
-    width: calc(50px + 1vw);
+    width:calc(38px + 1vh);
+    width: calc(38px + 1vw);
     height:calc(10px + 1vh);
     height:calc(10px + 1vw);
   }
@@ -87,8 +87,8 @@ p {
   #query1 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
-    width:calc(130px + 1vh);
-    width: calc(130px + 1vw);
+    width:calc(132px + 1vh);
+    width: calc(104px + 1vw);
     height:calc(10px + 1vh);
     height:calc(10px + 1vw);
   }
@@ -122,8 +122,8 @@ p {
   #query4 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
-    width:calc(50px + 1vh);
-    width: calc(50px + 1vw);
+    width:calc(38px + 1vh);
+    width: calc(38px + 1vw);
     height:calc(10px + 1vh);
     height:calc(10px + 1vw);
   }
@@ -154,8 +154,8 @@ p {
   #query5 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
-    width:calc(50px + 1vh);
-    width: calc(50px + 1vw);
+    width:calc(38px + 1vh);
+    width: calc(38px + 1vw);
     height:calc(10px + 1vh);
     height:calc(10px + 1vw);
   }
@@ -181,8 +181,8 @@ p {
   #query2 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
-    width:calc(50px + 1vh);
-    width: calc(50px + 1vw);
+    width:calc(38px + 1vh);
+    width: calc(38px + 1vw);
     height:calc(10px + 1vh);
     height:calc(10px + 1vw);
   }
