@@ -34,17 +34,49 @@ p {
     height: 3.5vh;
 }
 
- #query1 {
+#query3 {
     position: relative;
-    bottom: 83.5vh;
-    right: -5.4vh;
-    right: -2.8vw;
+    bottom: 82.5vh;
+    right: -10vh;
+    right: -10vw;
     z-index: 400;
     background: white;
     padding-right: 1vh;
     padding-top: 1vh;
     padding-left: 1vh;
     padding-bottom: 1vh;
+    display: inline;
+    font-size: 2vh;
+    font-size: 1vw;
+    width: 14.3vw;
+    height: 4.9vh;
+  }
+
+  #query3 select {
+    font-size: 2vh;
+    font-size: 1vw;
+    width: 11vh;
+    width: 6vw;
+    height: 3vh;
+    height: 1.7vw;
+  }
+
+#query3 select:hover {
+  background-color: #ddd;
+}
+
+ #query1 {
+    position: relative;
+    bottom: 82.5vh;
+    right: -5.4vh;
+    right: -10vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    margin-right: 20vw;
     display: inline;
     font-size: 2vh;
     font-size: 1vw;
@@ -64,73 +96,11 @@ p {
   background-color: #ddd;
 }
 
-  #query2 {
+#query4 {
     position: relative;
-    bottom: 83.5vh;
-    right: -5.4vh;
-    right: -2.8vw;
-    z-index: 400;
-    background: white;
-    padding-right: 1vh;
-    padding-top: 1vh;
-    padding-left: 1vh;
-    padding-bottom: 1vh;
-    display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 11vw;
-    height: 4vh
-  }
-
-  #query2 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 11vh;
-    width: 6vw;
-    height: 3vh;
-    height: 1.7vw;
-  }
-
-#query2 select:hover {
-  background-color: #ddd;
-}
-
-  #query3 {
-    position: relative;
-    bottom: 83.5vh;
-    right: -6vh;
-    right: -2.8vw;
-    z-index: 400;
-    background: white;
-    padding-right: 1vh;
-    padding-top: 1vh;
-    padding-left: 1vh;
-    padding-bottom: 1vh;
-    display: inline;
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 14vw;
-    height: 4vh;
-  }
-
-  #query3 select {
-    font-size: 2vh;
-    font-size: 1vw;
-    width: 11vh;
-    width: 6vw;
-    height: 3vh;
-    height: 1.7vw;
-  }
-
-#query3 select:hover {
-  background-color: #ddd;
-}
-
-  #query4 {
-    position: relative;
-    bottom: 83.5vh;
-    right: -5.4vh;
-    right: -2.8vw;
+    bottom: 82.4vh;
+    right: 25.4vh;
+    right: -10vw;
     z-index: 400;
     background: white;
     padding-right: 1vh;
@@ -156,15 +126,16 @@ p {
     height: 1.7vw;
   }
 
+
 #query5 select:hover {
   background-color: #ddd;
 }
 
   #query5 {
     position: relative;
-    bottom: 83.5vh;
+    bottom: 82.4vh;
     right: -5.4vh;
-    right: -2.8vw;
+    right: -10vw;
     z-index: 400;
     background: white;
     padding-right: 1vh;
@@ -185,6 +156,37 @@ p {
     height: 3vh;
     height: 1.7vw;
   }
+
+#query2 {
+    position: relative;
+    bottom: 82.4vh;
+    right: -5.4vh;
+    right: -10vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    display: inline;
+    font-size: 2vh;
+    font-size: 1vw;
+    width: 11vw;
+    height: 4vh
+  }
+
+  #query2 select {
+    font-size: 2vh;
+    font-size: 1vw;
+    width: 11vh;
+    width: 6vw;
+    height: 3vh;
+    height: 1.7vw;
+  }
+
+#query2 select:hover {
+  background-color: #ddd;
+}
  /*/////////////////////// */
 
 

@@ -235,7 +235,7 @@ legend1FoodInsecurity.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:14vw; max-wdith:14vw;'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:21vw; max-wdith:21vw;'>") +'<br>';
     }
                          
     return div;
@@ -251,7 +251,7 @@ legend2Livelihood.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:24vh;max-width:28vh;max-height:20vw; max-wdith:20vw;'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:24vh;max-width:28vh;max-height:36vw; max-wdith:36vw;'>") +'<br>';
     }
 
     return div;
@@ -267,7 +267,7 @@ legend3Conflicts.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:48vh;max-width:48vh;max-height:34vw; max-wdith:34vw;'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:48vh;max-width:48vh;max-height:37vw; max-wdith:37vw;'>") +'<br>';
     }
 
     return div;
@@ -299,14 +299,14 @@ legend5Population.onAdd = function (map) {
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:14vw; max-wdith:14vw;'>") +'<br>';
+            grades[i] + (" <img src="+ labels[i] +" style= 'max-height:18vh;max-width:18vh;max-height:24vw; max-wdith:24vw;'>") +'<br>';
     }
 
     return div;
 };
 
 //Add Legend 1 to map
-legend5Population.addTo(map);
+legend1FoodInsecurity.addTo(map);
 
 //Legend Add/Remove Controls
  map.on('overlayadd', function (eventLayer) {
