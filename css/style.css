@@ -307,8 +307,7 @@ form{
   background-color: #a2763b;
   color: white;
   padding: 5px;
-  font-size: 2vh;
-  font-size: 1.6vw;
+font-size:calc(4.4px + 1vw);
   border: none;
 }
 
@@ -316,20 +315,19 @@ form{
     width:6vh;
     height:4.2vh;
     top:30vw;
-    padding-left: 30vh;
+    padding-left: 10vh;
     position: right;
 }
 
 .navbar-collapse{
     position: right;
-    padding-top: .7vh;
-    padding-left: 10vh;
+    padding-left: 5vh;
 }
 
 .dropdown {
   position: right;
   display: inline-block;
-  font-size:calc(9px + 1vw);
+  font-size:40vh;
 }
 
 .dropdown-content {
