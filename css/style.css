@@ -400,9 +400,10 @@ label:hover{
 .modal-container #modal-toggle {
   position: relative;
   width: 0px;
-  height: 10px;
+  height: 1vh;
   cursor: pointer;
-  top: 1.2vw;
+  top: 1vw;
+  left: -3.2vw;
 }
 
 .modal-container .modal-backdrop {
