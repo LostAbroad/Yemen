@@ -4,6 +4,7 @@ body { margin:0; padding:0; overflow: hidden;}
     height:92%;
     top: 7.8vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
 .center {
   display: block;
   margin-left: auto;
@@ -14,9 +15,12 @@ body { margin:0; padding:0; overflow: hidden;}
     font-size: 4vw;
     font-size: 2.6vh;
     padding-left:4vw;
-    
-}
+    }
 
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+    font-size: calc(3px + 1vh);
+    font-size: calc(7px + 0.5vw)
+}
 .search-bar1{
     width:16.7vw;
     height: 2vh;
