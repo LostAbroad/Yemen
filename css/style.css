@@ -19,7 +19,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 .leaflet-popup-content-wrapper .leaflet-popup-content {
     font-size: calc(3px + 1vh);
-    font-size: calc(7px + 0.5vw)
+    font-size: calc(7px + 0.5vw);
 }
 .search-bar1{
     width:16.7vw;
@@ -293,8 +293,8 @@ form{
 }
 
 .card-title{
-    font-size: 3.3vh;
-    font-size: 1.9vw;
+    font-size: calc(20px + 2vh);
+    font-size: calc(20px + 1vw);
 }
 
 .card-body {
