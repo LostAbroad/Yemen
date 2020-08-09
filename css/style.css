@@ -38,9 +38,9 @@ body { margin:0; padding:0; overflow: hidden;}
   margin-right: auto;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 32em) {
 .center {
-  display: block;
+  display: inline;
   max-width:90%;
   max-height:100%;
   padding-left: -6vw;
