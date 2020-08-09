@@ -13,14 +13,6 @@ body { margin:0; padding:0; overflow: hidden;}
     }
 }
 
-.img {
-  display: block;
-  max-width:90%;
-  max-height:100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 @media (max-width: 24em) {
   .img {
   display: block;
@@ -717,4 +709,10 @@ label:hover{
   font-size:calc(3px + 1vh);
   font-size:calc(3px + 1vw);
   font-weight: normal;
+}
+
+@media (max-width: 54em) {
+#inNeed {
+    display: none;
+    }
 }
