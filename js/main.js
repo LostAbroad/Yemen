@@ -169,35 +169,6 @@ var zoomHome = L.Control.zoomHome({
 });
 zoomHome.addTo(map);
 
-//GPS Locating Map Control
-var locateControl = L.control.locate({
-    //    position: "bottomright",
-    drawCircle: true,
-    follow: true,
-    setView: true,
-    keepCurrentZoomLevel: true,
-    markerStyle: {
-        weight: 1,
-        opacity: 0.8,
-        fillOpacity: 0.8
-    },
-    circleStyle: {
-        weight: 1,
-        clickable: false
-    },
-    icon: "fa fa-compass",
-    metric: false,
-    strings: {
-    },
-    locateOptions: {
-        maxZoom: 18,
-        watch: true,
-        enableHighAccuracy: true,
-        maximumAge: 10000,
-        timeout: 10000
-    }
-}).addTo(map);
-
 //Create main overlay features 
   var overlays = {
     'Food Insecurity':foodInsecurity,
