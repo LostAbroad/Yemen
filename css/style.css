@@ -12,12 +12,21 @@ body { margin:0; padding:0; overflow: hidden;}
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}   
     }
 }
+
+.img {
+  display: block;
+  max-width:90%;
+  max-height:100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .center {
   display: block;
   max-width:90%;
   max-height:100%;
-  margin-left: calc(3px + 50vh);
-  margin-right: calc(3px + 50vh);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .paragraph {
@@ -357,7 +366,7 @@ nav {
     height: 99vh;
     z-index: 2;
     float: left;
-    margin-top: 1.5%;
+    margin-top: 0.5%;
     overflow-x:hidden;
     overflow-y:hidden;
     /*        background-color: #343a40;*/
