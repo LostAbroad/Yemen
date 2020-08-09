@@ -326,21 +326,33 @@ form{
   background-color: #a2763b;
   color: white;
   padding: 5px;
-font-size:calc(4.4px + 1vw);
+  font-size: 1.5vw;
   border: none;
 }
 
-.navbar-toggler{
-    width:6vh;
-    height:4.2vh;
-    top:30vw;
-    padding-left: 10vh;
-    position: right;
+.dropbtn1 {
+  background-color: #a2763b;
+  color: white;
+  padding: 5px;
+  font-size: 1.5vw;
+  border: none;
+}
+
+@media (max-width: 35em) {
+.dropbtn1 {
+display: none;
+}
+}
+
+.navbar{
+    height:7.7vh;
+    min-height: 4vw;
 }
 
 .navbar-collapse{
     position: right;
     padding-left: 5vh;
+    padding-top: 0px;
 }
 
 .dropdown {
