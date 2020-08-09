@@ -173,6 +173,16 @@ body { margin:0; padding:0; overflow: hidden;}
     height:calc(10px + 1vw);
   }
 
+@media (max-width: 24em) {
+  #query1 select {
+    font-size:calc(3px + 1vh);
+    font-size:calc(3px + 1vw);
+    width:calc(100px + 1vh);
+    width: calc(90px + 1vw);
+    height:calc(10px + 1vh);
+    height:calc(10px + 1vw);
+  }
+}
 #query1 select:hover {
   background-color: #ddd;
 }
@@ -194,6 +204,26 @@ body { margin:0; padding:0; overflow: hidden;}
     width: 13vw;
     height: 4vh;
   }
+
+@media (max-width: 24em) {
+    #query4 {
+    position: relative;
+    bottom: 82.4vh;
+    right: -11vh;
+    right: -11vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    display: inline;
+    font-size:calc(3px + 1vh);
+    font-size:calc(3px + 1vw);
+    width: 13vw;
+    height: 4vh;
+  }
+}
 
 #query4 select:hover {
   background-color: #ddd;
@@ -231,6 +261,26 @@ body { margin:0; padding:0; overflow: hidden;}
     height: 4vh
   }
 
+@media (max-width: 24em) {
+      #query5 {
+    position: relative;
+    bottom: 82.4vh;
+    right: -11vh;
+    right: -11vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    display: inline;
+    font-size:calc(3px + 1vh);
+    font-size:calc(3px + 1vw);
+    width: 15vw;
+    height: 4vh
+  }
+}
+
   #query5 select {
     font-size:calc(3px + 1vh);
     font-size:calc(3px + 1vw);
@@ -257,6 +307,26 @@ body { margin:0; padding:0; overflow: hidden;}
     width: 11vw;
     height: 4vh;
   }
+
+@media (max-width: 24em) {
+    #query2 {
+    position: relative;
+    bottom: 82.4vh;
+    right: -11vh;
+    right: -11vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    display: inline;
+    font-size:calc(3px + 1vh);
+    font-size:calc(3px + 1vw);
+    width: 11vw;
+    height: 4vh;
+  }
+}
 
   #query2 select {
     font-size:calc(3px + 1vh);
