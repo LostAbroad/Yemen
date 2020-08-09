@@ -32,7 +32,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 24em) {
 .leaflet-popup-content-wrapper {
-    min-width: 27vw;
+    min-width: 20vw;
     }
 }
 
@@ -44,7 +44,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 24em) {
    .leaflet-popup-content{
-   min-width: 40vw;
+   min-width: 30vw;
     font-size: calc(2px + 1vh);
     font-size: calc(5px + 0.5vw);
 } 
@@ -95,7 +95,7 @@ body { margin:0; padding:0; overflow: hidden;}
 @media (max-width: 24em) {
 #query3 {
     position: relative;
-    bottom: 80.5vh;
+    bottom: 81.5vh;
     right: -12vh;
     right: -12vw;
     z-index: 400;
@@ -147,7 +147,7 @@ body { margin:0; padding:0; overflow: hidden;}
 @media (max-width: 24em) {
 #query1 {
     position: relative;
-    bottom: 80.5vh;
+    bottom: 81.5vh;
     right: -12vh;
     right: -12vw;
     z-index: 400;
