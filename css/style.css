@@ -345,7 +345,7 @@ font-size:calc(4.4px + 1vw);
 
 .dropdown {
   position: right;
-  display: inline-block;
+  display: inline-grid;
 }
 
 .dropdown-content {
@@ -384,7 +384,7 @@ figcaption{
 }
 
 .openbtn {
-  font-size: 2.4vw;
+  font-size: 16px;
   cursor: pointer;
   background-color: #a2763b;
   color: white;
