@@ -1,7 +1,7 @@
 body { margin:0; padding:0; overflow: hidden;}
 
 #map {
-    height:92%;
+    height: 92vh;
     top: 7.8vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
 
@@ -369,6 +369,11 @@ font-size:calc(4.4px + 1vw);
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color:#644824 ;}
+
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 figcaption{
   text-align: center;
