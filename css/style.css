@@ -32,7 +32,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 24em) {
 .leaflet-popup-content-wrapper {
-    max-width: 20vw;
+    max-width: 70vw;
     }
 }
 
@@ -44,7 +44,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 24em) {
    .leaflet-popup-content{
-   max-width: 30vw;
+   max-width: 70vw;
     font-size: calc(2px + 1vh);
     font-size: calc(5px + 0.5vw);
 } 
