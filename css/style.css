@@ -30,10 +30,24 @@ body { margin:0; padding:0; overflow: hidden;}
     min-width: 32vw;
 }
 
+@media (max-width: 24em) {
+.leaflet-popup-content-wrapper {
+    min-width: 27vw;
+    }
+}
+
 .leaflet-popup-content{
    min-width: 50vw;
     font-size: calc(3px + 1vh);
     font-size: calc(7px + 0.5vw);
+}
+
+@media (max-width: 24em) {
+   .leaflet-popup-content{
+   min-width: 40vw;
+    font-size: calc(2px + 1vh);
+    font-size: calc(5px + 0.5vw);
+} 
 }
 .search-bar1{
     width:16.7vw;
@@ -128,6 +142,26 @@ body { margin:0; padding:0; overflow: hidden;}
     font-size:calc(3px + 1vw);
     width: 25.8vw;
     height: 4vh
+}
+
+@media (max-width: 24em) {
+#query1 {
+    position: relative;
+    bottom: 80.5vh;
+    right: -12vh;
+    right: -12vw;
+    z-index: 400;
+    background: white;
+    padding-right: 1vh;
+    padding-top: 1vh;
+    padding-left: 1vh;
+    padding-bottom: 1vh;
+    display: inline;
+    font-size:calc(3px + 1vh);
+    font-size:calc(3px + 1vw);
+    width: 14.3vw;
+    height: 4.9vh;
+  }
 }
 
   #query1 select {
