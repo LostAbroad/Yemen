@@ -287,12 +287,17 @@ nav {
     height: 99vh;
     z-index: 2;
     float: left;
-    margin-top: .5%;
+    margin-top: 1.5%;
     overflow-x:hidden;
     overflow-y:hidden;
     /*        background-color: #343a40;*/
 }
 
+@media (max-width: 24em) {
+    #InNeed img {
+        display: none;
+    }
+}
 #features {
     margin: 0px;
     border: none;
