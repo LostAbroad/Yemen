@@ -339,7 +339,7 @@ form{
 }
 @media (max-width: 24em) {
 .dropbtn {
-font-size: calc(8px + 1vw);
+font-size: calc(9px + 1vw);
 }
 }
 @media (max-width: 48em) {
@@ -351,12 +351,6 @@ display: none;
 .navbar{
     height:7.7vh;
     min-height: 4vw;
-}
-@media (max-width: 24em) {
-.navbar{
-    height:9vh;
-    min-height: 5vw;
-}
 }
 
 .navbar-collapse{
