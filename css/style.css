@@ -58,9 +58,9 @@ body { margin:0; padding:0; overflow: hidden;}
     max-width: auto;
 }
 
-@media (max-width: 24em) {
+@media (max-width: 34em) {
 .leaflet-popup-content-wrapper {
-    max-width: auto;
+    max-width: 80%;
     }
 }
 
@@ -72,9 +72,9 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 34em) {
    .leaflet-popup-content{
-   width: auto;
+    max-width: 85%;
     font-size: calc(2px + 1vh);
-    font-size: calc(8px + 0.5vw);
+    font-size: calc(7px + 0.5vw);
 } 
 }
 
