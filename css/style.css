@@ -326,7 +326,7 @@ form{
   background-color: #a2763b;
   color: white;
   padding: 5px;
-  font-size: 1.5vw;
+  font-size: calc(7px + 1vw);
   border: none;
 }
 
@@ -334,11 +334,15 @@ form{
   background-color: #a2763b;
   color: white;
   padding: 5px;
-  font-size: 1.5vw;
+  font-size: calc(7px + 1vw);
   border: none;
 }
-
-@media (max-width: 35em) {
+@media (max-width: 24em) {
+.dropbtn {
+font-size: calc(14px + 1vw);
+}
+}
+@media (max-width: 48em) {
 .dropbtn1 {
 display: none;
 }
