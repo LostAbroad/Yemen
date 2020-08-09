@@ -5,6 +5,13 @@ body { margin:0; padding:0; overflow: hidden;}
     top: 7.8vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
 
+@media (max-width: 24em) {
+    #map{
+         height: 92vh;
+    top: 9vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}   
+    }
+}
 .center {
   display: block;
   max-width:90%;
@@ -354,8 +361,8 @@ display: none;
 }
 @media (max-width: 24em) {
 .navbar{
-    height:9vh;
-    min-height: 5vw;
+    height:10vh;
+    min-height: 6vw;
 }
 }
 
