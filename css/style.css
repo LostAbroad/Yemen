@@ -55,28 +55,29 @@ body { margin:0; padding:0; overflow: hidden;}
     }
 }
 .leaflet-popup-content-wrapper {
-    min-width: 32vw;
+    max-width: auto;
 }
 
 @media (max-width: 24em) {
 .leaflet-popup-content-wrapper {
-    max-width: 70vw;
+    max-width: auto;
     }
 }
 
 .leaflet-popup-content{
-   min-width: 50vw;
+   min-width: auto;
     font-size: calc(3px + 1vh);
-    font-size: calc(7px + 0.5vw);
+    font-size: calc(4px + 0.5vw);
 }
 
-@media (max-width: 24em) {
+@media (max-width: 34em) {
    .leaflet-popup-content{
-   max-width: 70vw;
+   max-width: auto;
     font-size: calc(2px + 1vh);
-    font-size: calc(5px + 0.5vw);
+    font-size: calc(8px + 0.5vw);
 } 
 }
+
 .search-bar1{
     width:16.7vw;
     height: 2vh;

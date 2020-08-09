@@ -187,7 +187,7 @@ var popup = L.popup({
     offset: L.point(30,213),
     closeButton: true,
     autoClose: true
-    }).setLatLng(map.getBounds().getCenter()).setContent('<b>Website Navigation</b><br><b><a href="https://lostabroad.github.io/YemenSplit/">Split Screen View: Recommended For Computers</a></b><br><br><u>General Overview:</u> This map contains data, resources, and the story pertaining to and discussing the current humanitarian crisis that is taking place in Yemen. Please continue reading for further details about this website.</p><p><u>Search Selection:</u> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information. More informaiton pertaining to their use and reason for inclusion can be found by clicking on the "?" near the top left.</p><p><u>Layer Selection:</u> The righthand side is a selection of layers that can be turned on and off at will. How many layers and what information should be displayed is entirely up to you. *Note: In order for the "Search Selection" to be used the layer must be turned on.</p><p><u>Multiple Layers:</u> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show).</p><p><u>Story/History:</u> Information pertaining to Yemens Humanitarian Crisis is located on the far left of the screen. To display these details select the folded map icon (click again to make the main map reappear). In order to read the information click on the downward facing arrows for the different sections.</p><p><u>Helping Yemen:</u> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>').openOn(map);
+    }).setLatLng(map.getBounds().getCenter()).setContent('<b>Website Navigation</b><br><b><a href="https://lostabroad.github.io/YemenSplit/">Split Screen View: Recommended For Computers</a></b><br><u>General Overview:</u> This map contains data, resources, and the story pertaining to and discussing the current humanitarian crisis that is taking place in Yemen. Please continue reading for further details about this website.<br><u>Search Selection:</u> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information. More informaiton pertaining to their use and reason for inclusion can be found by clicking on the "?" near the top left.<br><u>Layer Selection:</u> The righthand side is a selection of layers that can be turned on and off at will. How many layers and what information should be displayed is entirely up to you. *Note: In order for the "Search Selection" to be used the layer must be turned on.<br><u>Multiple Layers:</u> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show).<br><u>Story/History:</u> Information pertaining to Yemens Humanitarian Crisis is located on the far left of the screen. To display these details select the folded map icon (click again to make the main map reappear). In order to read the information click on the downward facing arrows for the different sections.<br><u>Helping Yemen:</u> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>').openOn(map);
 
 //Establish legend position within the map
 var legend1FoodInsecurity = L.control({position: 'bottomleft'});
@@ -321,28 +321,22 @@ legend1FoodInsecurity.addTo(map);
     }
   });
 
-setInterval(function () {
-   map.invalidateSize();
-}, 100);
-
-
     //Bind a popup for the food insecurity
     foodInsecurity.bindPopup(function (layer) {
-    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong>.</p>', layer.feature.properties);
-  });
+    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong>.</p>', layer.feature.properties)
+  }, {className: 'foodInsecurity'});
 
     //Query by specific values for food insecurity (indeex.html page)
     var insecurityFood = document.getElementById('insecurity');
 
       insecurityFood.addEventListener('change', function () {
-        foodInsecurity.setWhere(insecurityFood.value);
+        foodInsecurity.setWhere(insecurityFood.value)
       });
-    
     
     //Bind a popup for the livelihood
     livelihoodYemen.bindPopup(function (layer) {
     return L.Util.template('<p>The livelihood of this region is: <strong>{LZNAMEEN}</strong>.</p>', layer.feature.properties);
-    });
+    }, {className: 'livelihoodYemen'});
 
    //Query by specific values for livelihood (indeex.html page)
     var zonesLivelihood = document.getElementById('zone');
@@ -354,7 +348,7 @@ setInterval(function () {
     //Bind a popup for the conflicts
     conflictsYemen.bindPopup(function (layer) {
         return L.Util.template('<p>Conflict Type - <strong>{sub_event_type}</strong>: was initiated by <strong>{actor1}</strong> and resulted in <strong>{fatalities}</strong> casualties.</p>', layer.feature.properties);
-      });
+      }, {className: 'conflictsYemen'});
 
     //Query by specific values for conflicts (indeex.html page)
     var areaConflicts = document.getElementById('areas');
@@ -366,7 +360,7 @@ setInterval(function () {
     //Bind a popup for the territories
     oppositionTerritories.bindPopup(function (layer) {
     return L.Util.template('<p>The faction currently in control of this region is <strong>{Faction}</strong>.</p>', layer.feature.properties);
-    });
+    }, {className: 'oppositionTerritories'});
 
     //Query by specific values for territories (indeex.html page)
     var oppTerritories = document.getElementById('territories');
@@ -378,7 +372,7 @@ setInterval(function () {
     //Bind a popup for the population
     popYemen.bindPopup(function (layer) {
     return L.Util.template('<p>The population of <strong>{Link__Dist}</strong> is approximately <strong>{Link__Pop1}</strong> as of 2019</p>', layer.feature.properties);
-  });
+  }, {className: 'popYemen'});
 
     //Query by specific values for population (indeex.html page)
     var popPopulation = document.getElementById('population');
@@ -391,16 +385,19 @@ setInterval(function () {
     //Bind a popup for the country name
     countryYemen.bindPopup(function (layer) {
     return L.Util.template('<p>This is the country of <strong>{NAME_0}</strong>.</p>', layer.feature.properties);
-  });
+  }, {className: 'countryYemen'});
 
     //Bind a popup for the state names
     stateYemen.bindPopup(function (layer) {
     return L.Util.template('<p>This is the "state" of <strong>{NAME_1}</strong>.</p>', layer.feature.properties);
-  });
+  }, {className: 'stateYemen'});
 
     //Bind a popup for the county names
     countyYemen.bindPopup(function (layer) {
     return L.Util.template('<p>This is the "county" of <strong>{NAME_2}</strong>.</p>', layer.feature.properties);
-  });
+  }, {className: 'countyYemen'});
 
+setInterval(function () {
+   map.invalidateSize();
+}, 100);
 L.control.layers(baseLayers, overlays).addTo(map);
