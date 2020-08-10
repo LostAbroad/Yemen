@@ -568,6 +568,7 @@ font-size:calc(4.4px + 1vw);
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color:#644824 ;}
+.dropdown:hover .dropbtn1 {background-color:#644824 ;}
 
 figcaption{
   text-align: center;
