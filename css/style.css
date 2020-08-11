@@ -72,7 +72,7 @@ body { margin:0; padding:0; overflow: hidden;}
 
 @media (max-width: 34em) {
    .leaflet-popup-content{
-    max-width: 85%;
+    max-width: 90%;
     font-size: calc(2px + 1vh);
     font-size: calc(7px + 0.5vw);
 } 
