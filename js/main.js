@@ -320,9 +320,9 @@ legend1FoodInsecurity.addTo(map);
     }
   });
 
-     //Bind a popup for the food insecurity
+    //Bind a popup for the food insecurity
     foodInsecurity.bindPopup(function (layer) {
-    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong> could increase by <strong>{HA2}</strong> if aid is not seen between July 2020 - January 2021.</p>', layer.feature.properties)
+    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong> could increase by <strong>{HA2}</strong> if aid is not seen between July 2020 - January 2021. <u>Info on:</u><a href="https://fews.net/IPC"> Food Insecurity</a></p>', layer.feature.properties)
   }, {className: 'foodInsecurity'});
 
     //Query by specific values for food insecurity (indeex.html page)
@@ -359,7 +359,7 @@ legend1FoodInsecurity.addTo(map);
     
     //Bind a popup for the territories
     oppositionTerritories.bindPopup(function (layer) {
-    return L.Util.template('<p>The faction currently in control of this region is <strong>{Faction}</strong>. Info on:<a href="https://en.wikipedia.org/wiki/Al-Qaeda"> Al-Qaeda</a> Info on:<a href="https://en.wikipedia.org/wiki/Houthi_insurgency_in_Yemen"> Houthi</a></p>', layer.feature.properties);
+    return L.Util.template('<p>The faction currently in control of this region is <strong>{Faction}</strong>. <u>Info on:</u><a href="https://en.wikipedia.org/wiki/Al-Qaeda"> Al-Qaeda</a> <u>Info on:</u><a href="https://en.wikipedia.org/wiki/Houthi_insurgency_in_Yemen"> Houthi</a></p>', layer.feature.properties);
     }, {className: 'oppositionTerritories'});
 
     //Query by specific values for territories (indeex.html page)
