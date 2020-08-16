@@ -78,7 +78,6 @@ var conflictsYemen = L.esri.Cluster.featureLayer({
         }
   });   
 
-
 //Call Opposition Territories Polygon from ArcGIS Online, Popup, and Query
 var oppositionTerritories = L.esri.featureLayer({
     url: 'https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/Yemen_Final_WFL1/FeatureServer/3',
@@ -187,7 +186,7 @@ var popup = L.popup({
     offset: L.point(30,213),
     closeButton: true,
     autoClose: true
-    }).setLatLng(map.getBounds().getCenter()).setContent('<b>Website Navigation</b><br><b><a href="https://lostabroad.github.io/YemenSplit/">Split Screen View: Recommended For Computers</a></b><br><u>General Overview:</u> This map contains data, resources, and the story pertaining to and discussing the current humanitarian crisis that is taking place in Yemen. Please continue reading for further details about this website.<br><u>Search Selection:</u> At the top of the map there are several selections spanning food insecurity levels, livelihood, conflict types, and faction locations that can be used to search for information. More informaiton pertaining to their use and reason for inclusion can be found by clicking on the "?" near the top left.<br><u>Layer Selection:</u> The righthand side is a selection of layers that can be turned on and off at will. How many layers and what information should be displayed is entirely up to you. *Note: In order for the "Search Selection" to be used the layer must be turned on.<br><u>Multiple Layers:</u> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show).<br><u>Story/History:</u> Information pertaining to Yemens Humanitarian Crisis is located on the far left of the screen. To display these details select the folded map icon (click again to make the main map reappear). In order to read the information click on the downward facing arrows for the different sections.<br><u>Helping Yemen:</u> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>').openOn(map);
+    }).setLatLng(map.getBounds().getCenter()).setContent('<b>Website Navigation</b><br><b><a href="https://lostabroad.github.io/YemenSplit/">Split Screen View: Recommended For Computers</a></b><br><u>General Overview:</u> This map contains data and story discussing the current humanitarian crisis in Yemen. Please continue reading for further details about this website.<br><u>Search Selection:</u> The top of the map has several selections spanning food insecurity levels, livelihood, etc. that can be used to search for information. More informaiton pertaining to their use/ reason for inclusion can be found by clicking on the "?" near the top left.<br><u>Layer Selection:</u> The righthand side has a selection of layers that can be turned on and off at will. *Note: In order for the "Search Selection" to be used the layer must be turned on.<br><u>Multiple Layers:</u> When selecting more than one layer the last one selected will be placed as the top most feature (only that legend will show).<br><u>Story/History:</u> Information pertaining to Yemens Humanitarian Crisis is located on the far left of the screen. To display these details select the folded map icon (click again to make the main map reappear). <br><u>Helping Yemen:</u> An assortment of tabs are located at the top of the screen each highlighting important steps that we all can take in helping yemen from donating money, donating time, and even just being informed.</p>').openOn(map);
 
 //Establish legend position within the map
 var legend1FoodInsecurity = L.control({position: 'bottomleft'});
@@ -321,9 +320,9 @@ legend1FoodInsecurity.addTo(map);
     }
   });
 
-    //Bind a popup for the food insecurity
+     //Bind a popup for the food insecurity
     foodInsecurity.bindPopup(function (layer) {
-    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong>.</p>', layer.feature.properties)
+    return L.Util.template('<p>The level of food insecurity in this region is <strong>{ML2} out of 5</strong> could increase by <strong>{HA2}</strong> if aid is not seen between July 2020 - January 2021.</p>', layer.feature.properties)
   }, {className: 'foodInsecurity'});
 
     //Query by specific values for food insecurity (indeex.html page)
@@ -346,8 +345,9 @@ legend1FoodInsecurity.addTo(map);
       });
     
     //Bind a popup for the conflicts
+
     conflictsYemen.bindPopup(function (layer) {
-        return L.Util.template('<p>Conflict Type - <strong>{sub_event_type}</strong>: was initiated by <strong>{actor1}</strong> and resulted in <strong>{fatalities}</strong> casualties.</p>', layer.feature.properties);
+        return L.Util.template('<p>Conflict Type - <strong>{sub_event_type}</strong>: was initiated by <strong>{actor1}</strong> and resulted in <strong>{fatalities}</strong> casualties.</p>' + ('<p>{notes}</p>'), layer.feature.properties)
       }, {className: 'conflictsYemen'});
 
     //Query by specific values for conflicts (indeex.html page)
@@ -359,7 +359,7 @@ legend1FoodInsecurity.addTo(map);
     
     //Bind a popup for the territories
     oppositionTerritories.bindPopup(function (layer) {
-    return L.Util.template('<p>The faction currently in control of this region is <strong>{Faction}</strong>.</p>', layer.feature.properties);
+    return L.Util.template('<p>The faction currently in control of this region is <strong>{Faction}</strong>. Info on:<a href="https://en.wikipedia.org/wiki/Al-Qaeda"> Al-Qaeda</a> Info on:<a href="https://en.wikipedia.org/wiki/Houthi_insurgency_in_Yemen"> Houthi</a></p>', layer.feature.properties);
     }, {className: 'oppositionTerritories'});
 
     //Query by specific values for territories (indeex.html page)
